@@ -44,12 +44,12 @@ public class MainActivity extends AppCompatActivity {
                         geocoder= new Geocoder(MainActivity.this,Locale.getDefault());
                         addresses=geocoder.getFromLocation(location.getLatitude(),location.getLongitude(),1);
                         String address= addresses.get(0).getAddressLine(0);
-                        String area = addresses.get(0).getLocality();
-                        String city= addresses.get(0).getAdminArea();
+                        String city= addresses.get(0).getLocality();
+                        String state= addresses.get(0).getAdminArea();
                         String  country= addresses.get(0).getCountryName();
                         String  postalcode= addresses.get(0).getPostalCode();
 
-                        String fulladdress= address+", "+area+", "+city+", "+country+", "+postalcode;
+                        String fulladdress= address+", "+city+", "+state+", "+country+", "+postalcode;
                         textView.setText(fulladdress);
                     } catch (IOException e) {
                         e.printStackTrace();
